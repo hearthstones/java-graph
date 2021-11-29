@@ -27,11 +27,11 @@
 
 ### 作业1（选做）
 
-1. 编写代码, 根据自己的意愿随意编写, 可参考: [Hello.java](./Hello.java)
-2. 编译代码, 执行命令： `javac -g Hello.java`
+1. 编写代码, Math.class。
+2. 编译代码, 执行命令： `javac -encoding UTF-8 Math.java`
 3. 查看反编译的代码。
   - 3.1 可以安装并使用idea的jclasslib插件, 选中 [Hello.java](./Hello.java) 文件, 选择 `View --> Show Bytecode With jclasslib` 即可。
-  - 3.2 或者直接通过命令行工具 javap, 执行命令: `javap -v Hello.class`
+  - 3.2 或者直接通过命令行工具 javap, 执行命令: `javap -v Math.class`
 4. 分析相关的字节码。【此步骤需要各位同学自己进行分析】
 
 

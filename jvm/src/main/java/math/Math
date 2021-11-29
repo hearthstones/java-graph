@@ -1,0 +1,211 @@
+Classfile /G:/IdeaProjects/java-summary/jvm/src/main/java/math/Math.class
+  Last modified 2021-11-29; size 1166 bytes
+  MD5 checksum ed39209d94a6b9ac1b49786f893deac4
+  Compiled from "Math.java"
+public class math.Math
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #23.#34        // java/lang/Object."<init>":()V
+   #2 = Double             3.0d
+   #4 = Long               4l
+   #6 = Fieldref           #35.#36        // java/lang/System.out:Ljava/io/PrintStream;
+   #7 = Class              #37            // java/lang/StringBuilder
+   #8 = Methodref          #7.#34         // java/lang/StringBuilder."<init>":()V
+   #9 = String             #38            // 加法运算：
+  #10 = Methodref          #7.#39         // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #11 = Methodref          #7.#40         // java/lang/StringBuilder.append:(D)Ljava/lang/StringBuilder;
+  #12 = Methodref          #7.#41         // java/lang/StringBuilder.toString:()Ljava/lang/String;
+  #13 = Methodref          #42.#43        // java/io/PrintStream.println:(Ljava/lang/String;)V
+  #14 = String             #44            // 减法运算：
+  #15 = Methodref          #7.#45         // java/lang/StringBuilder.append:(J)Ljava/lang/StringBuilder;
+  #16 = String             #46            // 乘法运算：
+  #17 = String             #47            // 除法运算：
+  #18 = Methodref          #7.#48         // java/lang/StringBuilder.append:(F)Ljava/lang/StringBuilder;
+  #19 = String             #49            // for累加：
+  #20 = Methodref          #7.#50         // java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+  #21 = String             #51            // 进入if分支
+  #22 = Class              #52            // math/Math
+  #23 = Class              #53            // java/lang/Object
+  #24 = Utf8               <init>
+  #25 = Utf8               ()V
+  #26 = Utf8               Code
+  #27 = Utf8               LineNumberTable
+  #28 = Utf8               main
+  #29 = Utf8               ([Ljava/lang/String;)V
+  #30 = Utf8               StackMapTable
+  #31 = Class              #54            // "[Ljava/lang/String;"
+  #32 = Utf8               SourceFile
+  #33 = Utf8               Math.java
+  #34 = NameAndType        #24:#25        // "<init>":()V
+  #35 = Class              #55            // java/lang/System
+  #36 = NameAndType        #56:#57        // out:Ljava/io/PrintStream;
+  #37 = Utf8               java/lang/StringBuilder
+  #38 = Utf8               加法运算：
+  #39 = NameAndType        #58:#59        // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #40 = NameAndType        #58:#60        // append:(D)Ljava/lang/StringBuilder;
+  #41 = NameAndType        #61:#62        // toString:()Ljava/lang/String;
+  #42 = Class              #63            // java/io/PrintStream
+  #43 = NameAndType        #64:#65        // println:(Ljava/lang/String;)V
+  #44 = Utf8               减法运算：
+  #45 = NameAndType        #58:#66        // append:(J)Ljava/lang/StringBuilder;
+  #46 = Utf8               乘法运算：
+  #47 = Utf8               除法运算：
+  #48 = NameAndType        #58:#67        // append:(F)Ljava/lang/StringBuilder;
+  #49 = Utf8               for累加：
+  #50 = NameAndType        #58:#68        // append:(I)Ljava/lang/StringBuilder;
+  #51 = Utf8               进入if分支
+  #52 = Utf8               math/Math
+  #53 = Utf8               java/lang/Object
+  #54 = Utf8               [Ljava/lang/String;
+  #55 = Utf8               java/lang/System
+  #56 = Utf8               out
+  #57 = Utf8               Ljava/io/PrintStream;
+  #58 = Utf8               append
+  #59 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #60 = Utf8               (D)Ljava/lang/StringBuilder;
+  #61 = Utf8               toString
+  #62 = Utf8               ()Ljava/lang/String;
+  #63 = Utf8               java/io/PrintStream
+  #64 = Utf8               println
+  #65 = Utf8               (Ljava/lang/String;)V
+  #66 = Utf8               (J)Ljava/lang/StringBuilder;
+  #67 = Utf8               (F)Ljava/lang/StringBuilder;
+  #68 = Utf8               (I)Ljava/lang/StringBuilder;
+{
+  public math.Math();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 9: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=6, locals=9, args_size=1
+         0: fconst_2
+         1: fstore_1
+         2: ldc2_w        #2                  // double 3.0d
+         5: dstore_2
+         6: iconst_3
+         7: istore        4
+         9: ldc2_w        #4                  // long 4l
+        12: lstore        5
+        14: getstatic     #6                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        17: new           #7                  // class java/lang/StringBuilder
+        20: dup
+        21: invokespecial #8                  // Method java/lang/StringBuilder."<init>":()V
+        24: ldc           #9                  // String 加法运算：
+        26: invokevirtual #10                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        29: fload_1
+        30: f2d
+        31: dload_2
+        32: dadd
+        33: invokevirtual #11                 // Method java/lang/StringBuilder.append:(D)Ljava/lang/StringBuilder;
+        36: invokevirtual #12                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        39: invokevirtual #13                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        42: getstatic     #6                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        45: new           #7                  // class java/lang/StringBuilder
+        48: dup
+        49: invokespecial #8                  // Method java/lang/StringBuilder."<init>":()V
+        52: ldc           #14                 // String 减法运算：
+        54: invokevirtual #10                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        57: lload         5
+        59: iload         4
+        61: i2l
+        62: lsub
+        63: invokevirtual #15                 // Method java/lang/StringBuilder.append:(J)Ljava/lang/StringBuilder;
+        66: invokevirtual #12                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        69: invokevirtual #13                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        72: getstatic     #6                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        75: new           #7                  // class java/lang/StringBuilder
+        78: dup
+        79: invokespecial #8                  // Method java/lang/StringBuilder."<init>":()V
+        82: ldc           #16                 // String 乘法运算：
+        84: invokevirtual #10                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        87: dload_2
+        88: iload         4
+        90: i2d
+        91: dmul
+        92: invokevirtual #11                 // Method java/lang/StringBuilder.append:(D)Ljava/lang/StringBuilder;
+        95: invokevirtual #12                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        98: invokevirtual #13                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       101: getstatic     #6                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       104: new           #7                  // class java/lang/StringBuilder
+       107: dup
+       108: invokespecial #8                  // Method java/lang/StringBuilder."<init>":()V
+       111: ldc           #17                 // String 除法运算：
+       113: invokevirtual #10                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       116: iload         4
+       118: i2f
+       119: fload_1
+       120: fdiv
+       121: invokevirtual #18                 // Method java/lang/StringBuilder.append:(F)Ljava/lang/StringBuilder;
+       124: invokevirtual #12                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       127: invokevirtual #13                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       130: iconst_0
+       131: istore        7
+       133: iconst_0
+       134: istore        8
+       136: iload         8
+       138: iload         4
+       140: if_icmpge     156
+       143: iload         7
+       145: iload         4
+       147: iadd
+       148: istore        7
+       150: iinc          8, 1
+       153: goto          136
+       156: getstatic     #6                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       159: new           #7                  // class java/lang/StringBuilder
+       162: dup
+       163: invokespecial #8                  // Method java/lang/StringBuilder."<init>":()V
+       166: ldc           #19                 // String for累加：
+       168: invokevirtual #10                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       171: iload         7
+       173: invokevirtual #20                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+       176: invokevirtual #12                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       179: invokevirtual #13                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       182: iload         7
+       184: i2l
+       185: lload         5
+       187: lcmp
+       188: ifle          199
+       191: getstatic     #6                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       194: ldc           #21                 // String 进入if分支
+       196: invokevirtual #13                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       199: return
+      LineNumberTable:
+        line 12: 0
+        line 13: 2
+        line 14: 6
+        line 15: 9
+        line 17: 14
+        line 19: 42
+        line 21: 72
+        line 23: 101
+        line 25: 130
+        line 26: 133
+        line 27: 143
+        line 26: 150
+        line 29: 156
+        line 31: 182
+        line 32: 191
+        line 34: 199
+      StackMapTable: number_of_entries = 3
+        frame_type = 255 /* full_frame */
+          offset_delta = 136
+          locals = [ class "[Ljava/lang/String;", float, double, int, long, int, int ]
+          stack = []
+        frame_type = 250 /* chop */
+          offset_delta = 19
+        frame_type = 42 /* same */
+}
+SourceFile: "Math.java"
