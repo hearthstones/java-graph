@@ -37,18 +37,11 @@
 
 ### 作业2（必做）
 
-1. 打开 Spring 官网: https://spring.io/
-2. 找到 Projects --> Spring Initializr:  https://start.spring.io/
-3. 填写项目信息, 生成 maven 项目; 下载并解压。
-4. Idea或者Eclipse从已有的Source导入Maven项目。
-5. 从课件资料中找到资源 Hello.xlass 文件并复制到 src/main/resources 目录。
-6. 编写代码，实现 findClass 方法，以及对应的解码方法
-7. 编写main方法，调用 loadClass 方法；
-8. 创建实例，以及调用方法
-9. 执行.
-
-具体代码可参考: [XlassLoader.java](./XlassLoader.java)
-
+1. Idea或者Eclipse从已有的Source导入Maven项目；
+2. 从课件资料中找到资源 Hello.xlass 文件并复制到 src/main/resources 目录；
+3. 编写代码 CustomClassLoader，实现 findClass 方法，以及对应的解码方法；
+4. 编写测试类 TestCustomClassLoader，调用 loadClass 方法，并创建实例，调用方法。
+5. 执行.
 
 ### 作业3（必做）
 

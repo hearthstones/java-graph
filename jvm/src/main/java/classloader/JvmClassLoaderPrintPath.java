@@ -41,13 +41,14 @@ public class JvmClassLoaderPrintPath {
 
     private static void printUrlsOfClassLoader(ClassLoader classLoader) {
         try {
+            // 通过反射获取加载path：URLClassLoader -> URLClassPath ucp -> ArrayList<URL> path
             Field fieldUcp = URLClassLoader.class.getDeclaredField("ucp");
             fieldUcp.setAccessible(true);
             Object ucp = fieldUcp.get(classLoader);
             Field fieldPath = ucp.getClass().getDeclaredField("path");
             fieldPath.setAccessible(true);
             Object path = fieldPath.get(ucp);
-            List<Object> paths = (List<Object>) path;
+            List<URL> paths = (List<URL>) path;
             paths.forEach(p -> System.out.println("==> " + p.toString()));
             System.out.println("");
         } catch (NoSuchFieldException | IllegalAccessException e) {
