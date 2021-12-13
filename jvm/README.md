@@ -106,7 +106,3 @@ java -Xmx2g -Xms2g -XX:+UseG1GC -verbose:gc -XX:+PrintGCDateStamps -XX:+PrintGCD
 
 其中 [GCLogAnalysis.java](./GCLogAnalysis.java) 文件也可以从课件资料zip中找到.
 
-## 更多资料
-
-更多中英文的技术文章和参考资料: <https://github.com/cncounter/translation>
-
