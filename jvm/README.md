@@ -20,6 +20,12 @@
 
 5.（选做）本机使用 G1 GC 启动一个程序，仿照课上案例分析一下 JVM 情况。
 
+6.（选做）使用 [GCLogAnalysis.java] 演练一遍 串行/并行/CMS/G1 的案例。
+
+7.（选做）使用压测工具（wrk 或 sb），演练 gateway-server-0.0.1-SNAPSHOT.jar 示例。
+
+8.（选做）如果自己本地有可以运行的项目，可以按照 2 的方式进行演练。
+
 
 
 ## 操作步骤
@@ -66,7 +72,7 @@ JVM进程空间中的内存一般来说包括以下这些部分:
 另外，注意区分规范与实现的区别, 需要根据具体实现以及版本, 才能确定。 一般来说，我们的目的是为了排查故障和诊断问题，大致弄清楚这些参数和空间的关系即可。 具体设置时还需要留一些冗余量。
 
 
-### 4.（选做）
+### 作业4（选做）
 
 这个是具体案例分析, 请各位同学自己分析。
 
@@ -91,7 +97,7 @@ JAVA_OPTS=-Xmx4g -Xms4g -XX:+UseG1GC -XX:MaxGCPauseMillis=50
 - 其他...
 
 
-### 5.（选做）
+### 作业5（选做）
 
 例如使用以下命令:
 
@@ -106,3 +112,36 @@ java -Xmx2g -Xms2g -XX:+UseG1GC -verbose:gc -XX:+PrintGCDateStamps -XX:+PrintGCD
 
 其中 [GCLogAnalysis.java](./GCLogAnalysis.java) 文件也可以从课件资料zip中找到.
 
+### 作业6（选做）
+以在 windows IDEA 中执行为例。
+1. 编译 GCLogAnalysis.java。
+2. 执行命令切换目录：cd jvm/target/classes。
+
+3. 设置不同的参数启动，并打印出GC日志。
+```bash
+-XX:+PrintGC 更简洁
+-XX:+PrintGCDetails GC详情
+-XX:-UseAdaptiveSizePolicy 可以关闭自适应参数
+```
+
+- Parallel（默认）
+```bash
+java -XX:+PrintGCDetails gc.GCLogAnalysis
+java -XX:+PrintGCDetails -Xms1g -Xmx1g gc.GCLogAnalysis
+java -XX:+PrintGCDetails -Xms512m -Xmx512m gc.GCLogAnalysis
+java -XX:+PrintGCDetails -Xms128m -Xmx128m gc.GCLogAnalysis
+```
+
+- CMS
+```bash
+java -Xms1g -Xmx1g -XX:+PrintGC -XX:+UseConcMarkSweepGC gc.GCLogAnalysis
+java -Xms1g -Xmx1g -XX:+PrintGCDetails -XX:+UseConcMarkSweepGC gc.GCLogAnalysis
+```
+
+- G1
+```bash
+java -Xms1g -Xmx1g -XX:+PrintGC -XX:+UseG1GC gc.GCLogAnalysis
+java -Xms1g -Xmx1g -XX:+PrintGCDetails -XX:+UseG1GC gc.GCLogAnalysis
+```
+
+4. 复制到 GCeasy，图形化分析。
