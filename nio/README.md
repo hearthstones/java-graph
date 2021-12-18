@@ -1,3 +1,4 @@
+1. 实现socket编程，并压测。
 1.（选做）运行课上的例子，以及 Netty 的例子，分析相关现象。
 2.（必做）写一段代码，使用 HttpClient 或 OkHttp 访问 http://localhost:8801。
 3.（必做）整合你上次作业的 httpclient/okhttp。
@@ -7,3 +8,16 @@
 7.（选做）跑一跑课上的各个例子，加深对多线程的理解。
 8.（选做）完善网关的例子，试着调整其中的线程池参数。
 9. 分析 spring cloud zuul 与 spring cloud gateway。
+
+
+# 实现
+## 实现1
+1.HttpServer01、HttpServer02、HttpServer03。
+2.sb压测：
+- -c: 并发请求数量
+- -N: 运行时间（s）
+```bash
+sb -u http://localhost:8801 -c 40 -N 30
+sb -u http://localhost:8802 -c 40 -N 30
+sb -u http://localhost:8803 -c 40 -N 30
+```
