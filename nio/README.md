@@ -25,3 +25,9 @@ sb -u http://localhost:8803 -c 40 -N 30
 ## 实现2
 1. 代码实现：NettyHttpServer、HttpServerInitializer、HttpHandler。
 2. sb压测：`sb -u http://localhost:8804 -c 40 -N 30` 。
+
+## 实现3&4
+1. 分别引入 httpclient 和 okhttp 的依赖。
+2. HttpClient、OkHttp。
+
+## 实现5

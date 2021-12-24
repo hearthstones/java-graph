@@ -35,6 +35,7 @@ public class JvmClassLoaderPrintPath {
 
         // 3.应用类加载器 - AppClassLoader
         System.out.println("应用类加载器：" + appClassLoader);
+        System.out.println("当前classpath: " + appClassLoader.getResource(""));
         printUrlsOfClassLoader(appClassLoader);
     }
 
