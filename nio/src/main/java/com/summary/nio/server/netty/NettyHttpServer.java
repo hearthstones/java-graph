@@ -1,4 +1,4 @@
-package netty;
+package com.summary.nio.server.netty;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.PooledByteBufAllocator;
@@ -40,7 +40,7 @@ public class NettyHttpServer {
                     .channel(NioServerSocketChannel.class)
                     .handler(new LoggingHandler(LogLevel.INFO))
                     // 指定初始化器
-                    .childHandler(new HttpServerInitializer());
+                    .childHandler(new NettyServerInitializer());
             Channel channel = bootstrap.bind(port).sync().channel();
             System.out.println("netty http server start up on: http://127.0.0.1:" + port + '/');
             channel.closeFuture().sync();

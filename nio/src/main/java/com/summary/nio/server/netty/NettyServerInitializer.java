@@ -1,4 +1,4 @@
-package netty;
+package com.summary.nio.server.netty;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
@@ -6,7 +6,7 @@ import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
 
 /**
- * 初始化器
+ * Netty服务端初始化器
  * <p>
  *   指定 handler
  * </p>
@@ -14,7 +14,7 @@ import io.netty.handler.codec.http.HttpServerCodec;
  * @author luchao
  * @date 2021/12/18
  */
-public class HttpServerInitializer extends ChannelInitializer<SocketChannel> {
+public class NettyServerInitializer extends ChannelInitializer<SocketChannel> {
 
     @Override
     protected void initChannel(SocketChannel socketChannel) {
@@ -25,6 +25,6 @@ public class HttpServerInitializer extends ChannelInitializer<SocketChannel> {
                 // http消息聚合器
                 .addLast("httpAggregator",new HttpObjectAggregator(512 * 1024))
                 // 指定Handler
-                .addLast(new HttpHandler());
+                .addLast(new NettyServerHandler());
     }
 }

@@ -1,4 +1,4 @@
-package client;
+package com.summary.nio.client.httpclient;
 
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;

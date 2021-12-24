@@ -1,4 +1,4 @@
-package socket;
+package com.summary.nio.server.socket;
 
 import java.io.IOException;
 import java.io.PrintWriter;

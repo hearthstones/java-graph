@@ -1,4 +1,4 @@
-package client;
+package com.summary.nio.client.okhttp;
 
 import okhttp3.Call;
 import okhttp3.Request;
