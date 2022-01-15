@@ -3,6 +3,8 @@ package com.summary.mysql.mapper;
 import com.summary.mysql.domain.Order;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * 订单 Mapper层
  *
@@ -19,5 +21,13 @@ public interface OrderMapper {
      * @return int
      */
     int insert(Order record);
+
+    /**
+     * 批量插入
+     *
+     * @param list order list
+     * @return int
+     */
+    int batchInsert(List<Order> list);
 
 }

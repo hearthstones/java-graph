@@ -15,12 +15,18 @@
   </sql>
 
   <insert id="insert" parameterType="com.summary.mysql.domain.User">
-    insert into user (id, username, password, 
-      phone, address, gmt_create, 
-      gmt_modified)
+    insert into user (id, username, password, phone, address, gmt_create, gmt_modified)
     values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, 
-      #{gmtModified,jdbcType=TIMESTAMP})
+      #{phone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
+      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+
+  <insert id="batchInsert" parameterType="java.util.List">
+    INSERT INTO user (username, password, phone, address, gmt_create, gmt_modified)
+    VALUES
+    <foreach collection="list" separator="," item="item">
+      (#{item.username}, #{item.password}, #{item.phone}, #{item.address}, NOW(), NOW())
+    </foreach>
   </insert>
 
 </mapper>

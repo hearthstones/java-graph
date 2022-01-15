@@ -1,6 +1,7 @@
 package com.summary.mysql.domain;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.util.Date;
 
@@ -11,6 +12,7 @@ import java.util.Date;
  * @date 2022/1/8
  */
 @Data
+@Accessors(chain = true)
 public class User {
     private Long id;
 
