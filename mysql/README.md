@@ -65,6 +65,7 @@ mall.user 表当前有 3500万 条数据。
 ## 实现6
 
 ## 实现8
+详见：[《4.主从复制》](https://www.yuque.com/hashiqizhinu/zkbmcu/tor97n)
 
 ## 实现9
 
