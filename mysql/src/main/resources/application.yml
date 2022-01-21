@@ -2,12 +2,28 @@ server:
   port: 7001
 
 spring:
-  # datasource
+  # Hikari datasource
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://49.234.56.182:3306/mall?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
     username: root
     password: 123456
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 60000
+  # Druid datasource
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://49.234.56.182:3306/mall?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+#    username: root
+#    password: 123456
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    druid:
+#      initial-size: 5
+#      min-idle: 5
+#      max-active: 20
+#      max-wait: 60000
 
 # mybatis
 mybatis:

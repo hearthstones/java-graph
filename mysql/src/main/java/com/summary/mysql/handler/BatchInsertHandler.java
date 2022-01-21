@@ -3,7 +3,6 @@ package com.summary.mysql.handler;
 import com.summary.mysql.domain.User;
 import com.summary.mysql.mapper.UserMapper;
 import org.springframework.stereotype.Component;
-
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +40,4 @@ public class BatchInsertHandler {
             userMapper.batchInsert(list);
         }
     }
-
-
 }
