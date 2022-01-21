@@ -56,6 +56,11 @@
 5. 配置不同的数据库连接池（Hikari、Druid、DBCP、C3P0），模拟。
 
 ## 实现4
+mall.user 表当前有 3500万 条数据。
+1. 不同字段有无索引。
+2. 同一字段有无索引。
+3. 同一字段不同索引。
+详见：https://www.yuque.com/hashiqizhinu/zkbmcu/hdct2k
 
 ## 实现6
 
