@@ -18,7 +18,7 @@
     insert into user (id, username, password, phone, address, gmt_create, gmt_modified)
     values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
-      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP})
+      NOW(), NOW())
   </insert>
 
   <insert id="batchInsert" parameterType="java.util.List">
@@ -28,5 +28,9 @@
       (#{item.username}, #{item.password}, #{item.phone}, #{item.address}, NOW(), NOW())
     </foreach>
   </insert>
+
+  <select id="selectById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    SELECT * FROM user WHERE id = #{id,jdbcType=BIGINT}
+  </select>
 
 </mapper>

@@ -26,8 +26,15 @@ public interface UserMapper {
      * 批量插入
      *
      * @param list user list
-     * @return int
      */
-    int batchInsert(List<User> list);
+    void batchInsert(List<User> list);
+
+    /**
+     * 查询用户信息
+     *
+     * @param id 主键ID
+     * @return 用户信息
+     */
+    User selectById(Long id);
 
 }

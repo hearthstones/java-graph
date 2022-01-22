@@ -28,6 +28,10 @@ spring:
       name: ms
       master-data-source-name: master
       slave-data-source-names: slave
+    # 显示SQL
+    props:
+      sql:
+        show: true
 
   # 1.Hikari datasource
 #  datasource:
