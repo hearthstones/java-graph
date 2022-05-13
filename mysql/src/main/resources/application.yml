@@ -1,5 +1,5 @@
 server:
-  port: 7001
+  port: 7070
 
 spring:
   # 3.sharding-jdbc读写分离
