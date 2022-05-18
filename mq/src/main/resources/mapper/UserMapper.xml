@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.summary.mq.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.summary.mq.domain.User">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, username, password, phone, address, gmt_create, gmt_modified
+  </sql>
+
+  <insert id="insert" parameterType="com.summary.mq.domain.User">
+    insert into user (id, username, password, phone, address, gmt_create, gmt_modified)
+    values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
+      NOW(), NOW())
+  </insert>
+
+  <insert id="batchInsert" parameterType="java.util.List">
+    INSERT INTO user (username, password, phone, address, gmt_create, gmt_modified)
+    VALUES
+    <foreach collection="list" separator="," item="item">
+      (#{item.username}, #{item.password}, #{item.phone}, #{item.address}, NOW(), NOW())
+    </foreach>
+  </insert>
+
+  <select id="selectById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    SELECT * FROM user WHERE id = #{id,jdbcType=BIGINT}
+  </select>
+
+</mapper>
