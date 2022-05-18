@@ -44,7 +44,7 @@ mybatis:
   mapper-locations: classpath*:/mapper/*.xml
 
 ## RocketMQ springboot starter
-#rocketmq:
-#  name-server: localhost:9876
-#  producer:
-#    group: demo-group-productor
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: template-group

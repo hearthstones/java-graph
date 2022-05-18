@@ -1,6 +1,6 @@
 package com.summary.mq;
 
-import com.summary.mq.demo1.ProducerSample;
+import com.summary.mq.template.TemplateProducer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,11 +19,11 @@ import javax.annotation.Resource;
 public class MqTest {
 
     @Resource
-    private ProducerSample producerSample;
+    private TemplateProducer producerSample;
 
     @Test
     public void sendMsgTest() {
-        producerSample.sendMsg("test-topic1", "first mq msg");
+        producerSample.syncSend("test-topic1", "first mq msg");
     }
 
 }

@@ -1,7 +1,6 @@
 package com.summary.mq.stream.producer;
 
 import com.summary.mq.stream.channel.NormalProcessor;
-import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;

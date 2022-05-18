@@ -1,20 +1,21 @@
-package com.summary.mq.demo1;
+package com.summary.mq.template;
 
+import com.summary.mq.consts.TopicConst;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;
 import org.springframework.stereotype.Component;
 
 /**
- * ConsumerSample
+ * TemplateConsumer
  *
  * @author luchao
  * @since 2022/5/13
  */
 @Slf4j
 @Component
-@RocketMQMessageListener(topic = "test-topic1", consumerGroup = "consumer-test-topic1")
-public class ConsumerSample implements RocketMQListener<String> {
+@RocketMQMessageListener(topic = TopicConst.TEMPLATE_TOPIC, consumerGroup = "template-group")
+public class TemplateConsumer implements RocketMQListener<String> {
 
     @Override
     public void onMessage(String msg) {
