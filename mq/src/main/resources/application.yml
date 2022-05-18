@@ -1,12 +1,50 @@
 server:
   port: 7071
 
+
 spring:
   application:
     name: rocketmq
+  # spring cloud stream rocketmq
+  cloud:
+    stream:
+      ## name-srv
+      rocketmq:
+        binder:
+          name-server: localhost:9876
+      ## channel绑定
+      bindings:
+        ### 普通消息
+        normalOutputChannel:
+          destination: normal-topic
+          group: normal-group
+          content-type: application/json
+        normalInputChannel:
+          destination: normal-topic
+          group: normal-group
+          content-type: application/json
+        ### 事务消息
+        txInputChannel:
+          destination: tx-topic
+          group: tx-group
+          content-type: application/json
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://49.234.56.182:3306/mall?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 60000
 
-# RocketMQ
-rocketmq:
-  name-server: localhost:9876
-  producer:
-    group: demo-group-productor
+# mybatis
+mybatis:
+  type-aliases-package: com.summary.mq.domain
+  mapper-locations: classpath*:/mapper/*.xml
+
+## RocketMQ springboot starter
+#rocketmq:
+#  name-server: localhost:9876
+#  producer:
+#    group: demo-group-productor
