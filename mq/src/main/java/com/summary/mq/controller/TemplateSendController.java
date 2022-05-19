@@ -1,6 +1,6 @@
 package com.summary.mq.controller;
 
-import com.summary.mq.consts.TopicConst;
+import com.summary.mq.consts.DestinationConst;
 import com.summary.mq.template.TemplateProducer;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,17 +23,17 @@ public class TemplateSendController {
 
     @PostMapping("/syncSend")
     public void syncSend(String msg) {
-        producer.syncSend(TopicConst.TEMPLATE_TOPIC, msg);
+        producer.syncSend(DestinationConst.TEMPLATE_TOPIC, msg);
     }
 
     @PostMapping("/asyncSend")
     public void asyncSend(String msg) {
-        producer.asyncSend(TopicConst.TEMPLATE_TOPIC, msg);
+        producer.asyncSend(DestinationConst.TEMPLATE_TOPIC, msg);
     }
 
     @PostMapping("/sendOneWay")
     public void sendOneWay(String msg) {
-        producer.sendOneWay(TopicConst.TEMPLATE_TOPIC, msg);
+        producer.sendOneWay(DestinationConst.TEMPLATE_TOPIC, msg);
     }
 
 

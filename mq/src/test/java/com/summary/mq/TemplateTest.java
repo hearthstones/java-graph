@@ -1,8 +1,9 @@
 package com.summary.mq;
 
 import cn.hutool.core.util.IdUtil;
-import com.summary.mq.consts.TopicConst;
+import com.summary.mq.consts.DestinationConst;
 import com.summary.mq.template.TemplateProducer;
+import com.summary.mq.template.tag.TagProducer;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,28 +23,30 @@ import javax.annotation.Resource;
 public class TemplateTest {
 
     @Resource
-    private TemplateProducer producer;
-    @Resource
     private RocketMQTemplate rocketmqTemplate;
+    @Resource
+    private TemplateProducer templateProducer;
+    @Resource
+    private TagProducer tagProducer;
 
     @Test
     public void syncSendTest() {
-        producer.syncSend(TopicConst.TEMPLATE_TOPIC, "消息发送测试 - 同步");
+        templateProducer.syncSend(DestinationConst.TEMPLATE_TOPIC, "消息发送测试 - 同步");
     }
 
     @Test
     public void asyncSendTest() {
-        producer.asyncSend(TopicConst.TEMPLATE_TOPIC, "消息发送测试 - 异步");
+        templateProducer.asyncSend(DestinationConst.TEMPLATE_TOPIC, "消息发送测试 - 异步");
     }
 
     @Test
     public void sendOneWayTest() {
-        producer.sendOneWay(TopicConst.TEMPLATE_TOPIC, "消息发送测试 - 单向");
+        templateProducer.sendOneWay(DestinationConst.TEMPLATE_TOPIC, "消息发送测试 - 单向");
     }
 
     @Test
-    public void sendOrderly() {
-        String topic = TopicConst.TEMPLATE_TOPIC;
+    public void sendOrderlyTest() {
+        String topic = DestinationConst.TEMPLATE_TOPIC;
         String orderId = IdUtil.fastUUID();
 //        producer.sendOrderly(topic, orderId);
         for (int i = 0; i < 20; i++) {
@@ -52,17 +55,22 @@ public class TemplateTest {
     }
 
     @Test
-    public void sendDisOrderly() {
-        String topic = TopicConst.TEMPLATE_TOPIC;
+    public void sendDisOrderlyTest() {
+        String topic = DestinationConst.TEMPLATE_TOPIC;
         for (int i = 0; i < 20; i++) {
-            producer.syncSend(topic, "无序消息 - " + i);
+            templateProducer.syncSend(topic, "无序消息 - " + i);
         }
     }
 
     @Test
-    public void sendDelay() {
+    public void sendDelayTest() {
         int delayLevel = 5;
-        producer.sendDelay(TopicConst.TEMPLATE_TOPIC, "延时消息，延时级别 - " + delayLevel, delayLevel);
+        templateProducer.sendDelay(DestinationConst.TEMPLATE_TOPIC, "延时消息，延时级别 - " + delayLevel, delayLevel);
+    }
+
+    @Test
+    public void tagTest() {
+        tagProducer.trade();
     }
 
 }

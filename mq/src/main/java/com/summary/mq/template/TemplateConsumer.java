@@ -1,6 +1,6 @@
 package com.summary.mq.template;
 
-import com.summary.mq.consts.TopicConst;
+import com.summary.mq.consts.DestinationConst;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-@RocketMQMessageListener(topic = TopicConst.TEMPLATE_TOPIC, consumerGroup = "template-group")
+@RocketMQMessageListener(topic = DestinationConst.TEMPLATE_TOPIC, consumerGroup = "template-group")
 public class TemplateConsumer implements RocketMQListener<String> {
 
     @Override
