@@ -20,6 +20,7 @@ public class TemplateConsumer implements RocketMQListener<String> {
     @Override
     public void onMessage(String msg) {
         log.info("接收消息：{}", msg);
+//        log.info("当前线程：{}, 接收消息：{}", Thread.currentThread().getId(), msg);
     }
 
 }

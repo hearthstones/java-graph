@@ -23,6 +23,8 @@ public class TemplateTest {
 
     @Resource
     private TemplateProducer producer;
+    @Resource
+    private RocketMQTemplate rocketmqTemplate;
 
     @Test
     public void syncSendTest() {
@@ -41,15 +43,26 @@ public class TemplateTest {
 
     @Test
     public void sendOrderly() {
-        producer.sendOrderly(TopicConst.TEMPLATE_TOPIC, IdUtil.fastUUID());
+        String topic = TopicConst.TEMPLATE_TOPIC;
+        String orderId = IdUtil.fastUUID();
+//        producer.sendOrderly(topic, orderId);
+        for (int i = 0; i < 20; i++) {
+            rocketmqTemplate.syncSendOrderly(topic, "有序消息 - " + i, orderId);
+        }
     }
 
     @Test
     public void sendDisOrderly() {
         String topic = TopicConst.TEMPLATE_TOPIC;
         for (int i = 0; i < 20; i++) {
-            producer.syncSend(topic, "无序消息测试 - " + i);
+            producer.syncSend(topic, "无序消息 - " + i);
         }
+    }
+
+    @Test
+    public void sendDelay() {
+        int delayLevel = 5;
+        producer.sendDelay(TopicConst.TEMPLATE_TOPIC, "延时消息，延时级别 - " + delayLevel, delayLevel);
     }
 
 }
