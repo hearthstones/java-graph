@@ -1,4 +1,4 @@
-package com.summary.juc.thread;
+package com.summary.concurrency.thread;
 
 import cn.hutool.core.util.ObjectUtil;
 

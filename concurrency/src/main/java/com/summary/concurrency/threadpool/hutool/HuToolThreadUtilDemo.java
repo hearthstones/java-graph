@@ -1,4 +1,4 @@
-package com.summary.juc.threadpool;
+package com.summary.concurrency.threadpool.hutool;
 
 import cn.hutool.core.thread.ThreadUtil;
 

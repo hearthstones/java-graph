@@ -1,18 +1,18 @@
-package com.summary.juc.threadpool;
+package com.summary.concurrency.threadpool.juc;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * FixedThreadPoolDemo
+ * CachedThreadPoolDemo
  *
  * @author luchao
  * @since 2022/8/8
  */
-public class FixedThreadPoolDemo {
+public class CachedThreadPoolDemo {
 
     public static void main(String[] args) {
-        ExecutorService executor = Executors.newFixedThreadPool(3);
+        ExecutorService executor = Executors.newCachedThreadPool();
         for (int i = 0; i < 10; i++) {
             final int index = i;
             executor.execute(() -> System.out.println("当前任务：" + index + "，当前线程：" + Thread.currentThread().getName()));

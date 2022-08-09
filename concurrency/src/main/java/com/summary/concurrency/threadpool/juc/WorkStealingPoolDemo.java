@@ -1,4 +1,4 @@
-package com.summary.juc.threadpool;
+package com.summary.concurrency.threadpool.juc;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

@@ -1,4 +1,4 @@
-package com.summary.juc.atomic;
+package com.summary.concurrency.atomic;
 
 /**
  * 线程不安全计数
