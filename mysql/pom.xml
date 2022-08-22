@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>java.summary.mysql</groupId>
+    <groupId>java.graph.mysql</groupId>
     <artifactId>mysql</artifactId>
     <version>1.0-SNAPSHOT</version>
 

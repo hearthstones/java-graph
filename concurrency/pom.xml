@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>java.summary.concurrency</groupId>
+    <groupId>java.graph.concurrency</groupId>
     <artifactId>concurrency</artifactId>
     <version>1.0-SNAPSHOT</version>
 

@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>java.summary.mq</groupId>
+    <groupId>java.graph.mq</groupId>
     <artifactId>mq</artifactId>
     <version>1.0-SNAPSHOT</version>
 

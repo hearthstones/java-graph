@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.summary.mq.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="com.summary.mq.domain.User">
+<mapper namespace="com.graph.mq.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.graph.mq.domain.User">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
@@ -14,7 +14,7 @@
     id, username, password, phone, address, gmt_create, gmt_modified
   </sql>
 
-  <insert id="insert" parameterType="com.summary.mq.domain.User">
+  <insert id="insert" parameterType="com.graph.mq.domain.User">
     insert into user (id, username, password, phone, address, gmt_create, gmt_modified)
     values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
